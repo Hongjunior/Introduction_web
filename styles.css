@@ -1,0 +1,200 @@
+/* 전체 폰트 스타일을 Black Han Sans로 설정 */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('images/background.jpg'); /* 배경 이미지 경로 */
+  background-size: cover; /* 배경 이미지를 화면에 맞게 확대/축소 */
+  font-family: 'Black Han Sans', sans-serif;
+  background-color: #d9d9d9;
+  color: #333;
+  font-size: 0.9rem; /* 기본 폰트 크기를 줄임 */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 헤더 스타일 */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  height: 6vh; /* 헤더 높이 줄임 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+header .menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5vw; /* 메뉴 간격 줄임 */
+}
+
+header .menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5vh 1vw; /* 메뉴 간격 줄임 */
+  transition: color 0.3s;
+}
+
+header .menu li a:hover {
+  color: #36454F; /* 차콜색으로 변경 */
+}
+
+/* 이름 영역 */
+.name-container {
+  position: fixed;
+  top: 10vh; /* 상단에서 더 낮은 위치 */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5vw; /* 폰트 크기 더 줄임 */
+  color: #333; /* 차콜색으로 변경 */
+  font-weight: bold;
+  z-index: 2000;
+}
+
+/* 창 모양 */
+.window {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 75%; /* 창 너비 더 줄임 */
+  max-width: 800px;
+  height: 50vh; /* 창 높이 더 줄임 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5vh 2vw;
+  text-align: left;
+  z-index: 500;
+
+  /* 중앙 정렬 추가 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 세로 정렬 */
+  align-items: center; /* 가로 정렬 */
+}
+
+/* 내용 글씨 크기 조정 */
+.window .main-content p {
+  font-size: 1.5rem; /* 글씨 크기를 더 줄임 */
+  margin: 20px 0; /* 상하단 여백 설정 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.window .main-content .introduce p {
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: flex-start; /* 모든 요소를 좌측 정렬 */
+  text-align: left;
+  gap: 20px; /* 요소 간 간격 설정 */
+}
+
+/* 콘텐츠 컨테이너 */
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px 0;
+  gap: 50px; /* 글자와 이미지 간격 */
+}
+
+.content-container p {
+  text-align: left;
+  margin: 0;
+  flex: 1;
+}
+
+.content-container .images {
+  display: flex;
+  gap: 20px; /* 이미지 간 간격 */
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.content-container img {
+  width: 200px;
+}
+
+/* 멘트 영역 */
+.ment-container {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5vw; /* 글씨 크기 줄임 */
+  color: #333; /* 차콜색으로 변경 */
+  z-index: 2000;
+}
+
+/* 푸터 스타일 */
+footer {
+  height: 6vh; /* 푸터 높이 줄임 */
+  text-align: center;
+  background-color: #333;
+  color: white;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* 이미지 중앙 정렬 */
+.favorite img {
+  display: flex;
+  gap: 50px; /* 글자와 이미지 간격 유지 */
+  justify-content: center;
+  margin: 0 auto;
+  width: 20%; /* 이미지 크기 줄임 */
+  max-width: 150px;
+}
+
+/* 반응형 웹 디자인 */
+@media (max-width: 768px) {
+  .name-container {
+    font-size: 4vw;
+    top: 8vh;
+  }
+
+  .window {
+    width: 85%; /* 작은 화면에서 창 너비 확장 */
+    height: 40vh; /* 창 높이 축소 */
+  }
+
+  .ment-container {
+    font-size: 3vw;
+    bottom: 10vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .name-container {
+    font-size: 5vw;
+    top: 7vh;
+  }
+
+  .ment-container {
+    font-size: 4vw;
+  }
+
+  .window {
+    height: 35vh;
+  }
+
+  .favorite img {
+    width: 20%;
+  }
+}

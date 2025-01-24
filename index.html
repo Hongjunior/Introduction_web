@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홍석준 자기소개 웹페이지</title>
+  <!-- Black Han Sans 폰트 추가 -->
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+  <!-- FontAwesome 최신 버전 추가 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="menu">
+        <li><a href="#" id="about">About</a></li>
+        <li><a href="#" id="favorite">Favorite</a></li>
+        <li><a href="#" id="experience">Experience</a></li>
+        <li><a href="#" id="plan">Plan</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 이름을 윈도우 밖으로 빼기 -->
+  <div class="name-container">
+    <h1>HONG SEOK JUN</h1>
+  </div>
+
+  <!-- 윈도우 내의 내용 -->
+  <div class="window">
+    <div class="main-content" id="window-content">
+      <!-- JavaScript로 기본 내용 설정 -->
+    </div>
+  </div>
+
+  <div class="ment-container">
+    <h1>WELCOME</h1>
+  </div>
+
+  <footer>
+    <p>© 2025 HONGSEOKJUN INTRODUCTION</p>
+  </footer>
+
+  <script>
+    // 페이지 로드 시 기본적으로 "About" 내용을 표시
+    function loadDefaultContent() {
+      document.getElementById("window-content").innerHTML = `
+        <div class="content-container">
+          <div class="about-container">
+          <p>MAJOR : COMPUTER ENGINEERING</p>
+          <p>MBTI : ISTP</p>
+          <button onclick="window.open('https://github.com/Hongjunior', '_blank')" 
+                  style="margin-top: 10px; padding: 10px 20px; font-size: 1rem; color: #fff; background-color: #333; border: none; border-radius: 5px; cursor: pointer; display: flex; align-items: center;">
+            <i class="fab fa-github" style="font-size: 1.5rem; margin-right: 10px;"></i>
+            Visit My GitHub
+          </button>
+          </div>
+          <div class="images">
+            <img src="images/me.jpg" alt="Me">
+          </div>
+        </div>
+      `;
+    }
+
+    // 페이지가 로드될 때 "About" 내용 로드
+    window.onload = loadDefaultContent;
+
+    // 메뉴 클릭 시 윈도우 내용 변경
+    document.getElementById("about").addEventListener("click", loadDefaultContent);
+
+    document.getElementById("favorite").addEventListener("click", function() {
+      document.getElementById("window-content").innerHTML = `
+        <div class="content-container">
+          <p>저는 아메리카노를 좋아하고, 걷는걸 좋아해 걸어다니면서 배경사진 위주로 다양한 사진 찍는것 또한 좋아합니다.</p>
+          <div class="images">
+            <img src="images/coffee.jpg" alt="Coffee">
+            <img src="images/walking.jpg" alt="Walking">
+          </div>
+        </div>
+      `;
+    });
+
+    document.getElementById("experience").addEventListener("click", function() {
+      document.getElementById("window-content").innerHTML = `
+        <div class="content-container">
+          <p>제가 아끼는 동생 콜라 입니다. 벌써 다음달에 8번째 생일을 앞두고 있어요. 콜라가 처음 저희집에 온 순간이 잊지 못할 경험입니다.</p>
+          <div class="images">
+            <img src="images/cola1.jpg" alt="Cola">
+            <img src="images/cola2.jpg" alt="Cola">
+          </div>
+        </div>
+      `;
+    });
+
+    document.getElementById("plan").addEventListener("click", function() {
+      document.getElementById("window-content").innerHTML = `
+        <div class="plan">
+          <p>길다면 길고 짧다면 짧을 이 시간동안 열심히 배우고, 그동안의 학과공부와 팀프로젝트 경험을 살려 이 유레카 교육의 최종 팀프로젝트에서 마음껏 역량을 뽐낼 수 있기를 기대중입니다.</p>
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
